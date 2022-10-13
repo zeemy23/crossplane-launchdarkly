@@ -36,12 +36,12 @@ import (
 	ctrl "sigs.k8s.io/controller-runtime"
 	"sigs.k8s.io/controller-runtime/pkg/log/zap"
 
-	"github.com/crossplane-contrib/provider-jet-launchdarkly/apis"
-	"github.com/crossplane-contrib/provider-jet-launchdarkly/apis/v1alpha1"
-	"github.com/crossplane-contrib/provider-jet-launchdarkly/config"
-	"github.com/crossplane-contrib/provider-jet-launchdarkly/internal/clients"
-	"github.com/crossplane-contrib/provider-jet-launchdarkly/internal/controller"
-	"github.com/crossplane-contrib/provider-jet-launchdarkly/internal/features"
+	"github.com/zeemy23/crossplane-launchdarkly/apis"
+	"github.com/zeemy23/crossplane-launchdarkly/apis/v1alpha1"
+	"github.com/zeemy23/crossplane-launchdarkly/config"
+	"github.com/zeemy23/crossplane-launchdarkly/internal/clients"
+	"github.com/zeemy23/crossplane-launchdarkly/internal/controller"
+	"github.com/zeemy23/crossplane-launchdarkly/internal/features"
 )
 
 func main() {

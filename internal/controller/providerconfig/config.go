@@ -25,7 +25,7 @@ import (
 	"github.com/crossplane/crossplane-runtime/pkg/resource"
 	"github.com/crossplane/terrajet/pkg/controller"
 
-	"github.com/crossplane-contrib/provider-jet-launchdarkly/apis/v1alpha1"
+	"github.com/zeemy23/crossplane-launchdarkly/apis/v1alpha1"
 )
 
 // Setup adds a controller that reconciles ProviderConfigs by accounting for

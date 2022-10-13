@@ -31,7 +31,7 @@ import (
 
 const (
 	resourcePrefix = "launchdarkly"
-	modulePath     = "github.com/crossplane-contrib/provider-jet-launchdarkly"
+	modulePath     = "github.com/zeemy23/crossplane-launchdarkly"
 )
 
 //go:embed schema.json

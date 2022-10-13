@@ -25,7 +25,7 @@ import (
 
 	"github.com/crossplane/terrajet/pkg/pipeline"
 
-	"github.com/crossplane-contrib/provider-jet-launchdarkly/config"
+	"github.com/zeemy23/crossplane-launchdarkly/config"
 )
 
 func main() {
