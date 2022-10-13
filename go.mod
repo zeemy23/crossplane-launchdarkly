@@ -1,4 +1,4 @@
-module github.com/crossplane-contrib/provider-jet-launchdarkly
+module github.com/zeemy23/crossplane-launchdarkly
 
 go 1.17
 
