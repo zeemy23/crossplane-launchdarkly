@@ -1,8 +1,8 @@
 # ====================================================================================
 # Setup Project
 
-PROJECT_NAME := provider-jet-launchdarkly
-PROJECT_REPO := github.com/crossplane-contrib/$(PROJECT_NAME)
+PROJECT_NAME := crossplane-launchdarkly
+PROJECT_REPO := github.com/zeemy23/$(PROJECT_NAME)
 
 export TERRAFORM_VERSION := 1.1.6
 

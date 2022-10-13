@@ -47,7 +47,7 @@ func GetProvider() *tjconfig.Provider {
 	}
 
 	pc := tjconfig.NewProviderWithSchema([]byte(providerSchema), resourcePrefix, modulePath,
-		tjconfig.WithDefaultResourceFn(defaultResourceFn)
+		tjconfig.WithDefaultResourceFn(defaultResourceFn),
 		tjconfig.WithIncludeList([]string{
 			"launchdarkly_project$",
 			"launchdarkly_environment$",
@@ -57,10 +57,10 @@ func GetProvider() *tjconfig.Provider {
 
 	for _, configure := range []func(provider *tjconfig.Provider){
 		// add custom config functions
-		environment.Configure
-		project.Configure
-		featureFlag.Configure
-		featureFlagEnvironment.Configure
+		environment.Configure,
+		project.Configure,
+		featureFlag.Configure,
+		featureFlagEnvironment.Configure,
 	} {
 		configure(pc)
 	}

@@ -1,4 +1,4 @@
-package repository
+package featureFlag
 
 import "github.com/crossplane/terrajet/pkg/config"
 

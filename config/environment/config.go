@@ -1,4 +1,4 @@
-package repository
+package environment
 
 import "github.com/crossplane/terrajet/pkg/config"
 
