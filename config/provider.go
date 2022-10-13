@@ -23,12 +23,15 @@ import (
 	tjconfig "github.com/crossplane/terrajet/pkg/config"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 
-	"github.com/crossplane-contrib/provider-jet-template/config/null"
+	"github.com/zeemy23/crossplane-launchdarkly/config/project"
+	"github.com/zeemy23/crossplane-launchdarkly/config/environment"
+	"github.com/zeemy23/crossplane-launchdarkly/config/featureFlag"
+	"github.com/zeemy23/crossplane-launchdarkly/config/featureFlagEnvironment"
 )
 
 const (
-	resourcePrefix = "template"
-	modulePath     = "github.com/crossplane-contrib/provider-jet-template"
+	resourcePrefix = "launchdarkly"
+	modulePath     = "github.com/crossplane-contrib/provider-jet-launchdarkly"
 )
 
 //go:embed schema.json
@@ -44,11 +47,20 @@ func GetProvider() *tjconfig.Provider {
 	}
 
 	pc := tjconfig.NewProviderWithSchema([]byte(providerSchema), resourcePrefix, modulePath,
-		tjconfig.WithDefaultResourceFn(defaultResourceFn))
+		tjconfig.WithDefaultResourceFn(defaultResourceFn)
+		tjconfig.WithIncludeList([]string{
+			"launchdarkly_project$",
+			"launchdarkly_environment$",
+			"launchdarkly_feature_flag$",
+			"launchdarkly_feature_flag_environment$",
+		}))
 
 	for _, configure := range []func(provider *tjconfig.Provider){
 		// add custom config functions
-		null.Configure,
+		environment.Configure
+		project.Configure
+		featureFlag.Configure
+		featureFlagEnvironment.Configure
 	} {
 		configure(pc)
 	}
